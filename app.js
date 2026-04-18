@@ -24,3 +24,4 @@ botao.addEventListener('click', function() {
     document.querySelector('#imagemprojeto').src = projeto[atual].imagemprojeto;
     document.querySelector('#paragrafo').textContent = projeto[atual].paragrafo;
 });
+
