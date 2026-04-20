@@ -30,12 +30,23 @@ if (botao) {
     });
 };
 /*Botão do tema escuro e claro*/
-/*Criação da variavel constante, q n muda*/
+/*Salvar o tema durante a troca de páginas*/
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo) {
+        document.body.className = temaSalvo;
+    }
+/*Para trocar o texto na troca de páginas*/
 const botaoTema = document.querySelector('.botao-tema');
+if (temaSalvo == "tema-escuro") {
+    botaoTema.textContent = "Tema claro";
+}else {
+    botaoTema.textContent = "Tema escuro";
+}
 /*Adiciona um evento de clique ao botão, que alterna a classe 'tema-escuro' no corpo do documento.*/
 botaoTema.addEventListener('click', function() {
     document.body.classList.toggle('tema-escuro');
     document.body.classList.toggle('tema-claro');
+        localStorage.setItem('tema', document.body.className);
 /*Dependendo da classe atual, o texto do botão é atualizado para indicar o tema oposto.*/
     var className = document.body.className;
     if(className == "tema-escuro"){
