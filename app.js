@@ -1,7 +1,9 @@
+'use strict';
+/*Configurações do botão de alternar sites*/
 const botao = document.querySelector('.btn');
 const projeto = [
     {
-        linktexto: 'linktexto',
+        linktexto: 'https://sweetlinsmp3.github.io/FatecZlsitecronograma/',
         titulo: 'Recriação do site de DSM',
         imagemprojeto: 'source/dsm.png',
         paragrafo: 'Atividade realizada com base no site oficial da fatec sobre o curso de DSM. Apresenta também uma tabela da grade horária do primeiro e segundo semestre.'
@@ -23,4 +25,21 @@ botao.addEventListener('click', function() {
     document.querySelector('#titulo').textContent = projeto[atual].titulo;
     document.querySelector('#imagemprojeto').src = projeto[atual].imagemprojeto;
     document.querySelector('#paragrafo').textContent = projeto[atual].paragrafo;
+});
+/*Botão do tema escuro e claro*/
+/*Criação da variavel constante, q n muda*/
+const botaoTema = document.querySelector('#botao-tema');
+/*Adiciona um evento de clique ao botão, que alterna a classe 'tema-escuro' no corpo do documento.*/
+botaoTema.addEventListener('click', function() {
+    document.body.classList.toggle('tema-escuro');
+    document.body.classList.toggle('tema-claro');
+/*Dependendo da classe atual, o texto do botão é atualizado para indicar o tema oposto.*/
+    var className = document.body.className;
+    if(className == "tema-escuro"){
+        botaoTema.textContent = "Tema claro";
+    }else{
+        botaoTema.textContent = "Tema escuro";
+    }
+/*Exibe no console do devtools o tema atual*/
+    console.log('nome atual da classe: ' + className);
 });

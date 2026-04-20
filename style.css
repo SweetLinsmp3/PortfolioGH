@@ -1,7 +1,44 @@
+:root{
+    --bgclaro: linear-gradient(to bottom, #333333 , white 30%);
+    --bgescuro: black;
+    --vermelhoescuro: #700000;
+    --vermelhoclaro: #990000;
+}
+/*Partes gerais*/
 .logo{
     width: 50px;
     height: 50px;
 }
+/*Configurações da lista navbar*/
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+    background-color: black;
+}
+nav ul li {
+    float: left;
+}
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    background-color: var(--vermelhoescuro);
+}
+a{
+    color: var(--vermelhoescuro);
+    text-decoration: none;
+    background-color: rgb(0, 0, 0);
+    border-style: none;
+    border-block: calc();
+}
+/*HTML e customização da navbar*/
 header{
     position: fixed;
     top: 0;
@@ -10,7 +47,8 @@ header{
     display: flex;
     align-items: center;
     padding: 5px 40px;
-    background: linear-gradient(to left, #000000, #700000);
+    height: 36px;
+    background: linear-gradient(to left, var(--vermelhoescuro), black);
 }
 header::after{
     content: '';
@@ -19,28 +57,36 @@ header::after{
 }
 nav{
     flex: 1;
+    display: block;
     display: flex;
-    justify-content: center;
+    justify-content: space-between 200px;
     gap: 200px;
 }
 nav a{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif    ;
     color: white;
     text-decoration: none;
     background-color: rgb(0, 0, 0);
-    border-radius: 5px;
-    border-style: groove;
-    padding: 5px;
+    border-style: none;
+    border-block: calc();
+    
+}
+/*Configurações do corpo da página, tema claro e tema escuro*/
+*{
+    color: var(--cordafonte);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#titulo{
+    color: var(--vermelhoescuro);
 }
 body{
     padding-top: 70px;
-    background-color: #d4d3d3;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: var(--bg);
 }
 h1{
     justify-content: center;
     text-align: center;
 }
+/*Imagem dos sites*/
 .quadro{
     display: block;
     margin: 20px auto;
@@ -48,6 +94,7 @@ h1{
     height: 400px;
     object-fit: contain;
 }
+/*Paragrafo*/
 p{
     display: flex;
     justify-content: center;
@@ -57,12 +104,13 @@ p{
     height: 60%;
     text-align: center;
 }
+/*Botão e ids*/
 .btn{
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #700000;
+    background-color: var(--vermelhoescuro);
     color: white;
     border: none;
     border-radius: 5px;
@@ -93,4 +141,39 @@ p{
     border-radius: 20%;
     object-fit: cover;
     object-position: center top;
+}
+/*curriculo*/
+curriculo{
+    display: block;
+    position: absolute;
+    top: 100px;
+    margin: 20px auto;
+    width: 60%;
+    height: 600px;
+}
+/*Botão dos temas*/
+#botao-tema{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--botaoTemabg);
+    color: var(--botaoTemafont);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*Body no tema claro*/
+.tema-claro{
+    --bg: var(--bgclaro);
+    --cordafonte: black;
+    --botaoTemabg: black; 
+    --botaoTemafont: var(--vermelhoclaro);
+}
+.tema-escuro{
+    --bg: var(--bgescuro);
+    --cordafonte: white;
+    --botaoTemabg: var(--vermelhoclaro);
+    --botaoTemafont: white;
 }
