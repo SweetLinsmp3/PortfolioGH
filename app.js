@@ -17,18 +17,21 @@ const projeto = [
 ];
 let atual = 0;
 
-botao.addEventListener('click', function() {
-  atual++;
-    if (atual >= projeto.length) {
-    atual = 0;}
-    document.querySelector('#linktexto').href = projeto[atual].linktexto;
-    document.querySelector('#titulo').textContent = projeto[atual].titulo;
+if (botao) {
+    botao.addEventListener('click', function() {
+        atual++;
+        if (atual >= projeto.length) {
+            atual = 0;
+        }
+        document.querySelector('#linktexto').href = projeto[atual].linktexto;
+        document.querySelector('#titulo').textContent = projeto[atual].titulo;
     document.querySelector('#imagemprojeto').src = projeto[atual].imagemprojeto;
     document.querySelector('#paragrafo').textContent = projeto[atual].paragrafo;
-});
+    });
+};
 /*Botão do tema escuro e claro*/
 /*Criação da variavel constante, q n muda*/
-const botaoTema = document.querySelector('#botao-tema');
+const botaoTema = document.querySelector('.botao-tema');
 /*Adiciona um evento de clique ao botão, que alterna a classe 'tema-escuro' no corpo do documento.*/
 botaoTema.addEventListener('click', function() {
     document.body.classList.toggle('tema-escuro');
